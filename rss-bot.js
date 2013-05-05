@@ -155,7 +155,7 @@ var bot = {
 	handlePost: function () {
 		var feedEnd;
 		if (bot.posts.length) {
-			bot.submit(bot.posts[bot.posts.length - 1][0], bot.posts[bot.posts.length - 1][1], 'Football');
+			bot.submit(bot.posts[bot.posts.length - 1][0], bot.posts[bot.posts.length - 1][1], 'SUBREDDIT_NAME_HERE');
 			bot.posts.pop();
 		} else {
 			clearInterval(bot.postTimer);
