@@ -96,9 +96,9 @@ var bot = {
 	},
 	readIn: function () {
 		var entry = '\n*** Begin log: ' + Date() + '\n';
-		fs.exists(bot.lc, function (exists) {
+		fs.exists(bot.lastCheckLog, function (exists) {
 			if (exists) {
-				fs.readFile(bot.lc, 'utf8', function (err, data) {
+				fs.readFile(bot.lastCheckLog, 'utf8', function (err, data) {
 					if (err) { throw err; }
 					console.log("Last check: ".blue + data);
 					bot.lastCheck = data;
@@ -114,7 +114,7 @@ var bot = {
 	},
 	writeOut: function () {
 		var log = bot.lastCheck = Date();
-		fs.writeFile(bot.lc, log, function (err) {
+		fs.writeFile(bot.lastCheckLog, log, function (err) {
 			if (err) {
 				console.log("Error: " + err.message);
 				return;
